@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-		{% load staticfiles %}
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Vu Nguyen</title>
+    <title>Vu's Blog</title>
 
     <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -35,39 +35,26 @@
 				<div class="navbar-nav ml-auto">
 					<a class="nav-item nav-link" href="https://www.facebook.com/nguyen.l.vu.92">Facebook</a>
 					<a class="nav-item nav-link" href="{% static 'vu.jpg' %}">Resume</a>
-					<a class="nav-item nav-link" href="{% url 'all_blogs' %}">Blog</a>
+					<a class="nav-item nav-link active" href="{% url 'all_blogs' %}">Blog</a>
 				</div>
 			</div>
 		</nav>
 	</header>
 	
 	<main role="main">
-		<section class="jumbotron text-center">
-			<div class="container">
-				<h1 class="jumbotron-heading">Hi, I'm Vu.</h1>
-				<p class="lead text-muted">I love to make Django websites. It's the thrill of handling the requests that the people want!</p>
-				<p>
-					<a href="mailto:vunguyenlethanh@gmail.com" class="btn btn-primary my-2">Email me</a>
-				</p>
-				<img class="img-fluid" height="250" width="250" src="{% static 'vu.jpg' %}" />
-			</div>
-		</section>
-	
-		<div class="album py-5 bg-light">
-			<div class="container">
-				<div class="row">
-					{% for job in jobs.all %}
-					<div class="col-md-4">
-						<div class="card mb-4 shadow-sm">
-							<img class="bd-placeholder-img card-img-top" src="{{ job.image.url }}" />
-							<div class="card-body">
-								<p class="card-text">{{ job.summary }}</p>
-							</div>
-						</div>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
+		<div class="container">
+			<h1 class="text-center pt-3">Welcome to Vu's Blog</h1>
+			<br />
+			<br />
+			<h2>Latest Posts</h2>
+			<hr />
+			{% for blog in blogs.all %}
+			<a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
+			{{ blog.pub_date_pretty }}
+			<img class="img-fluid" src="{{ blog.image.url }}" />
+			<br />
+			<p>{{ blog.summary }}</p>
+			{% endfor %}
 		</div>
 	</main>
 	
