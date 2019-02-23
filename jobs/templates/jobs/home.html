@@ -22,22 +22,61 @@
 		</div>
 	</section>
 
-	<div class="album py-5 bg-light">
-		<div class="container">
-			<div class="row">
-				{% for job in jobs.all %}
-				<div class="col-md-4">
-					<div class="card mb-4 shadow-sm">
-						<img class="bd-placeholder-img card-img-top" src="{{ job.image.url }}" />
-						<div class="card-body">
-							<p class="card-text">{{ job.summary }}</p>
+	
+    
+		<div class="album py-5 bg-light">
+			<div class="container rounded shadow-sm">
+				<h6 class="border-bottom border-gray pb-2 mb-2">Career</h6>
+				<div class="row">
+					{% for job in jobs.all %}
+					<div class="col-md-4">
+						<div class="card mb-4 shadow-sm">
+							<a href="{{ job.url }}"><img class="bd-placeholder-img card-img-top" src="{{ job.image.url }}" /></a>
+							<div class="card-body">
+								<p class="card-text">{{ job.summary }}</p>
+							</div>
 						</div>
 					</div>
+					{% endfor %}
 				</div>
-				{% endfor %}
 			</div>
 		</div>
-	</div>
+		
+		<div class="album py-5 bg-light">
+			<div class="container rounded shadow-sm">
+				<h6 class="border-bottom border-gray pb-2 mb-2">Books</h6>
+				<div class="row">
+					{% for book in books.all %}
+					<div class="col-md-4">
+						<div class="card mb-4 shadow-sm">
+							<a href="{{ book.url }}"><img class="bd-placeholder-img card-img-top" src="{{ book.image.url }}" /></a>
+							<div class="card-body">
+								<p class="card-text">{{ book.summary }}</p>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		
+		<div class="album py-5 bg-light">
+			<div class="container rounded shadow-sm">
+				<h6 class="border-bottom border-gray pb-2 mb-2">Videos</h6>
+				<div class="row">
+					{% for video in videos.all %}
+					<div class="col-md-4">
+						<div class="card mb-4 shadow-sm">
+							<iframe src="{{ video.url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<div class="card-body">
+								<p class="card-text">{{ video.summary }}</p>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
 </main>
 
 {% endblock %}
