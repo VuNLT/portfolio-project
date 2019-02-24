@@ -14,11 +14,11 @@
         <p class="text-center">{{ blog.pub_date }}</p>
         <img class="bd-placeholder-img card-img-top" src="{% thumbnail blog.image '1920' as im %}{{ im.url }}{% endthumbnail %}"
             srcset="
-                    {% thumbnail recipe.image '544' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
-                    {% thumbnail recipe.image '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
-                    {% thumbnail recipe.image '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
-                    {% thumbnail recipe.image '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
-                    {% thumbnail recipe.image '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+                    {% thumbnail blog.image '544' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                    {% thumbnail blog.image '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                    {% thumbnail blog.image '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                    {% thumbnail blog.image '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                    {% thumbnail blog.image '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
             alt="Some awesome soup"
             sizes="100vw"
         />
