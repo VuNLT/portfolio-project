@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # My Apps
+    'sorl.thumbnail',
     'jobs.apps.JobsConfig',
     'blog.apps.BlogConfig',
     'books.apps.BooksConfig',

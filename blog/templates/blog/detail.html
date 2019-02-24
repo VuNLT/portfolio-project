@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load thumbnail %}
+
 {% block title %}
     Blog: {{ blog.title }}
 {% endblock %}
@@ -10,7 +12,16 @@
     <div class="container">
         <h1 class="text-center pt-3">{{ blog.title }}</h1>
         <p class="text-center">{{ blog.pub_date }}</p>
-        <img class="img-fluid" src="{{ blog.image.url }}" />
+        <img class="bd-placeholder-img card-img-top" src="{% thumbnail blog.image '1920' as im %}{{ im.url }}{% endthumbnail %}"
+            srcset="
+                    {% thumbnail recipe.image '544' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                    {% thumbnail recipe.image '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                    {% thumbnail recipe.image '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                    {% thumbnail recipe.image '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                    {% thumbnail recipe.image '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+            alt="Some awesome soup"
+            sizes="100vw"
+        />
         <br />
         <br />
         <p>{{ blog.body }}</p>

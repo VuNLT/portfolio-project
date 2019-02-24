@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load thumbnail %}
+
 <!-- we have to add the below code to load static files for every template we use -->
 {% load staticfiles %}
 
@@ -18,7 +20,11 @@
 			<p>
 				<a href="mailto:vunguyenlethanh@gmail.com" class="btn btn-primary my-2">Email me</a>
 			</p>
-			<img class="img-fluid" height="350" width="350" src="{% static 'profile.jpg' %}" />
+			<div class="row justify-content-center">
+				<div class="col-4">
+					<img class="img-fluid rounded-circle" src="{% static 'profile.jpg' %}" />
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -31,7 +37,18 @@
 					{% for job in jobs.all %}
 					<div class="col-md-4">
 						<div class="card mb-4 shadow-sm">
-							<a href="{{ job.url }}"><img class="bd-placeholder-img card-img-top" src="{{ job.image.url }}" /></a>
+							<a href="{{ job.url }}">
+								<img class="bd-placeholder-img card-img-top" src="{% thumbnail job.image '1920' as im %}{{ im.url }}{% endthumbnail %}"
+									srcset="
+											{% thumbnail recipe.image '544' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+											{% thumbnail recipe.image '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+											{% thumbnail recipe.image '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+											{% thumbnail recipe.image '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+											{% thumbnail recipe.image '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+									alt="Some awesome soup"
+									sizes="100vw"
+								/>
+							</a>
 							<div class="card-body">
 								<p class="card-text">{{ job.summary }}</p>
 							</div>
@@ -49,7 +66,18 @@
 					{% for book in books.all %}
 					<div class="col-md-4">
 						<div class="card mb-4 shadow-sm">
-							<a href="{{ book.url }}"><img class="bd-placeholder-img card-img-top" src="{{ book.image.url }}" /></a>
+							<a href="{{ book.url }}">
+								<img class="bd-placeholder-img card-img-top" src="{% thumbnail book.image '1920' as im %}{{ im.url }}{% endthumbnail %}"
+									srcset="
+											{% thumbnail recipe.image '544' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+											{% thumbnail recipe.image '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+											{% thumbnail recipe.image '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+											{% thumbnail recipe.image '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+											{% thumbnail recipe.image '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+									alt="Some awesome soup"
+									sizes="100vw"
+								/>
+							</a>
 							<div class="card-body">
 								<p class="card-text">{{ book.summary }}</p>
 							</div>
