@@ -57,8 +57,17 @@
 	{% endblock %}
 	
 	<footer class="text-muted">
-		<div class="container text-center">
-			<p>&copy; Vu Nguyen {% now 'Y' %}</p>
+		<div class="container">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    <p>&copy; Vu Nguyen 2019 </p><!-- {% now 'Y' %} -->
+                </div>
+                <div class="col-md-6 text-right">
+                    {% if home_active %}
+                    <p>Total visitors: {{ hits }}</p>
+                    {% endif %}
+                </div>
+            </div>
 		</div>
 	</footer>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
