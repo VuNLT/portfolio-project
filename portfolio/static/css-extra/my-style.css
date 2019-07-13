@@ -1,0 +1,8 @@
+/* background gradient*/
+.bg-gradient-primary {
+	background-image: linear-gradient(to bottom right, green, blue);
+}
+
+.bg-gradient-secondary {
+	background-image: linear-gradient(to right, blue, cyan, yellow, red);
+}
