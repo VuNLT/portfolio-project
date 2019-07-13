@@ -9,7 +9,7 @@
 {% block content %}
 
 <main role="main">
-    <div class="container">
+    <div class="container rounded shadow-sm pt-3">
         <h1 class="text-center pt-3">{{ blog.title }}</h1>
         <p class="text-center">{{ blog.pub_date }}</p>
         <img class="bd-placeholder-img card-img-top" src="{% thumbnail blog.image '1920' as im %}{{ im.url }}{% endthumbnail %}"
@@ -21,10 +21,10 @@
                     {% thumbnail blog.image '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
             alt="Some awesome soup"
             sizes="100vw"
-        />
-        <br />
-        <br />
-        <div>{{ blog.body | linebreaks | urlize }}</div>
+        />    
+    </div>
+    <div class="container rounded shadow-sm pt-3">
+        {{ blog.body | linebreaks | urlize }}
     </div>
 </main>
 
