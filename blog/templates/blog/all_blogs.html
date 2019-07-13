@@ -29,7 +29,7 @@
             sizes="100vw"
         />
         <br />
-        <p>{{ blog.summary }}</p>
+        <div>{{ blog.summary | linebreaks | urlize }}</div>
         {% endfor %}
     </div>
 </main>

@@ -24,7 +24,7 @@
         />
         <br />
         <br />
-        <p>{{ blog.body }}</p>
+        <div>{{ blog.body | linebreaks | urlize }}</div>
     </div>
 </main>
 
