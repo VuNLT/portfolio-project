@@ -1,8 +1,10 @@
 /* background gradient*/
 .bg-gradient-primary {
-	background-image: linear-gradient(to bottom right, green, blue);
+	background: rgb(34,193,195);
+	background: linear-gradient(0deg, rgba(34,193,195,1) 25%, rgba(74,45,253,1) 66%);
 }
 
 .bg-gradient-secondary {
-	background-image: linear-gradient(to right, blue, cyan, yellow, red);
+	background: rgb(238,174,202);
+	background: radial-gradient(circle, rgba(238,174,202,1) 28%, rgba(177,148,233,1) 64%);
 }
