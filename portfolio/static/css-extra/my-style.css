@@ -1,7 +1,7 @@
 /* background gradient*/
 .bg-gradient-primary {
 	background: rgb(2,0,36);
-	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(96,11,45,0.03545168067226889) 35%, rgba(0,212,255,1) 100%);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(96,11,45,0.36318277310924374) 0%, rgba(103,153,163,0.9850315126050421) 100%);
 }
 
 .bg-gradient-secondary {
